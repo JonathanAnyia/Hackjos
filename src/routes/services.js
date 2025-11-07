@@ -1,0 +1,10 @@
+const express = require('express');
+const router = express.Router();
+const svcCtrl = require('../controllers/services');
+const auth = require('../middleware/auth');
+router.get('/', svcCtrl.list);
+router.post('/', auth, svcCtrl.create);
+router.get('/:id', svcCtrl.get);
+router.put('/:id', auth, svcCtrl.update);
+router.delete('/:id', auth, svcCtrl.remove);
+module.exports = router;
