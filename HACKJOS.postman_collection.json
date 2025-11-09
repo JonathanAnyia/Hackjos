@@ -1,0 +1,2222 @@
+{
+	"info": {
+		"_postman_id": "60a677bf-94d1-40d5-b89b-d3df9fa73c27",
+		"name": "HACKJOS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26581128"
+	},
+	"item": [
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGY3YmRmYzZmY2EwZDA1NjgxNTEzYSIsImlhdCI6MTc2MjYyNTU5MCwiZXhwIjoxNzYzMjMwMzkwfQ.DRE-6DcLLMAWiva30q8mqFRQnmBhQ_xLu3rnbClvROo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUri}}/api/auth/logout",
+							"host": [
+								"{{baseUri}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign-up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Peter Paul\",\n  \"email\": \"john@example.com\",\n  \"phone\": \"08012345678\",\n  \"password\": \"peter1234@\",\n  \"businessName\": \"John's Store\",\n  \"businessType\": \"product_seller\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUri}}/api/auth/register",
+							"host": [
+								"{{baseUri}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "sign up",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Peter Paul\",\n  \"email\": \"john@example.com\",\n  \"phone\": \"08012345678\",\n  \"password\": \"peter1234@\",\n  \"businessName\": \"John's Store\",\n  \"businessType\": \"product_seller\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUri}}/api/auth/register",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGY3YmRmYzZmY2EwZDA1NjgxNTEzYSIsImlhdCI6MTc2MjYyMjQzMSwiZXhwIjoxNzYzMjI3MjMxfQ.ea9Ty3n6e4yC1mVUt6rqVQhcjgYqRXZBKZ03JJKmvi8; Path=/; Expires=Mon, 08 Dec 2025 17:20:31 GMT; HttpOnly; SameSite=Strict"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGY3YmRmYzZmY2EwZDA1NjgxNTEzYSIsImlhdCI6MTc2MjYyMjQzMSwiZXhwIjoxNzcwMzk4NDMxfQ.4loqMsUzZui5iYARcPe3ouz9YMBOt1yDTnDwI6w8krk; Path=/; Expires=Mon, 08 Dec 2025 17:20:31 GMT; HttpOnly; SameSite=Strict"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "796"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"31c-C26ZffBjUxnldupbd5Wr7MTE6zE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Nov 2025 17:20:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Registration successful. Please verify your email.\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGY3YmRmYzZmY2EwZDA1NjgxNTEzYSIsImlhdCI6MTc2MjYyMjQzMSwiZXhwIjoxNzYzMjI3MjMxfQ.ea9Ty3n6e4yC1mVUt6rqVQhcjgYqRXZBKZ03JJKmvi8\",\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGY3YmRmYzZmY2EwZDA1NjgxNTEzYSIsImlhdCI6MTc2MjYyMjQzMSwiZXhwIjoxNzcwMzk4NDMxfQ.4loqMsUzZui5iYARcPe3ouz9YMBOt1yDTnDwI6w8krk\",\n    \"user\": {\n        \"id\": \"690f7bdfc6fca0d05681513a\",\n        \"name\": \"Peter Paul\",\n        \"email\": \"john@example.com\",\n        \"phone\": \"08012345678\",\n        \"businessName\": \"John's Store\",\n        \"businessType\": \"product_seller\",\n        \"role\": \"user\",\n        \"subscription\": {\n            \"features\": {\n                \"unlimitedInvoices\": false,\n                \"maxCustomerRecords\": 50,\n                \"prioritySupport\": false,\n                \"advancedReporting\": false\n            },\n            \"plan\": \"free\",\n            \"isActive\": true\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"john@example.com\",\n    \"password\" : \"peter1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUri}}/api/auth/login",
+							"host": [
+								"{{baseUri}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\" : \"john@example.com\",\n    \"password\" : \"peter1234@\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUri}}/api/auth/login",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGY3YmRmYzZmY2EwZDA1NjgxNTEzYSIsImlhdCI6MTc2MjYyNTU5MCwiZXhwIjoxNzYzMjMwMzkwfQ.DRE-6DcLLMAWiva30q8mqFRQnmBhQ_xLu3rnbClvROo; Path=/; Expires=Mon, 08 Dec 2025 18:13:10 GMT; HttpOnly; SameSite=Strict"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "refreshToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGY3YmRmYzZmY2EwZDA1NjgxNTEzYSIsImlhdCI6MTc2MjYyNTU5MCwiZXhwIjoxNzcwNDAxNTkwfQ.JavH0CYJFDzlPGAAFH5TAgj2G8tOGudUjlZL4bfBxZg; Path=/; Expires=Mon, 08 Dec 2025 18:13:10 GMT; HttpOnly; SameSite=Strict"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "762"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2fa-jWQVMQxRMAbup/GW6C1aPEWoWK4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Nov 2025 18:13:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Login successful\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGY3YmRmYzZmY2EwZDA1NjgxNTEzYSIsImlhdCI6MTc2MjYyNTU5MCwiZXhwIjoxNzYzMjMwMzkwfQ.DRE-6DcLLMAWiva30q8mqFRQnmBhQ_xLu3rnbClvROo\",\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGY3YmRmYzZmY2EwZDA1NjgxNTEzYSIsImlhdCI6MTc2MjYyNTU5MCwiZXhwIjoxNzcwNDAxNTkwfQ.JavH0CYJFDzlPGAAFH5TAgj2G8tOGudUjlZL4bfBxZg\",\n    \"user\": {\n        \"id\": \"690f7bdfc6fca0d05681513a\",\n        \"name\": \"Peter Paul\",\n        \"email\": \"john@example.com\",\n        \"phone\": \"08012345678\",\n        \"businessName\": \"John's Store\",\n        \"businessType\": \"product_seller\",\n        \"role\": \"user\",\n        \"subscription\": {\n            \"features\": {\n                \"unlimitedInvoices\": false,\n                \"maxCustomerRecords\": 50,\n                \"prioritySupport\": false,\n                \"advancedReporting\": false\n            },\n            \"plan\": \"free\",\n            \"isActive\": true\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "get me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGY3YmRmYzZmY2EwZDA1NjgxNTEzYSIsImlhdCI6MTc2MjYyNTU5MCwiZXhwIjoxNzYzMjMwMzkwfQ.DRE-6DcLLMAWiva30q8mqFRQnmBhQ_xLu3rnbClvROo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUri}}/api/auth/me",
+							"host": [
+								"{{baseUri}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get me",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUri}}/api/auth/me",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "855"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"357-2V0cqAgJoAUXT7RgP+ZOYxwrUc0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Nov 2025 18:14:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"user\": {\n        \"settings\": {\n            \"workingHours\": {\n                \"start\": \"09:00 AM\",\n                \"end\": \"06:00 PM\"\n            },\n            \"notifications\": {\n                \"push\": true,\n                \"email\": true\n            },\n            \"timezone\": \"Africa/Lagos (WAT)\",\n            \"currency\": \"NGN (Nigerian Naira)\",\n            \"language\": \"English\"\n        },\n        \"subscription\": {\n            \"features\": {\n                \"unlimitedInvoices\": false,\n                \"maxCustomerRecords\": 50,\n                \"prioritySupport\": false,\n                \"advancedReporting\": false\n            },\n            \"plan\": \"free\",\n            \"isActive\": true\n        },\n        \"profile\": {\n            \"rating\": 0,\n            \"totalOrders\": 0,\n            \"totalRevenue\": 0\n        },\n        \"_id\": \"690f7bdfc6fca0d05681513a\",\n        \"name\": \"Peter Paul\",\n        \"email\": \"john@example.com\",\n        \"phone\": \"08012345678\",\n        \"businessName\": \"John's Store\",\n        \"businessType\": \"product_seller\",\n        \"role\": \"user\",\n        \"isActive\": true,\n        \"isEmailVerified\": false,\n        \"isPhoneVerified\": false,\n        \"walletBalance\": 0,\n        \"totalSales\": 0,\n        \"totalExpenses\": 0,\n        \"createdAt\": \"2025-11-08T17:20:31.166Z\",\n        \"updatedAt\": \"2025-11-08T18:13:10.979Z\",\n        \"__v\": 0,\n        \"lastLogin\": \"2025-11-08T18:13:10.976Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "customer registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUri}}/api/clients/register",
+							"host": [
+								"{{baseUri}}"
+							],
+							"path": [
+								"api",
+								"clients",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "INVENTORY",
+			"item": [
+				{
+					"name": "PRODUCTS",
+					"item": [
+						{
+							"name": "add product",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"productId\": \"CB-001\",\n  \"name\": \"Cocoa Beans\",\n  \"description\": \"Premium cocoa beans\",\n  \"category\": \"Agriculture\",\n  \"saleType\": \"bulk\",\n  \"unitPrice\": 75000,\n  \"costPrice\": 50000,\n  \"quantity\": 120,\n  \"minStockLevel\": 20,\n  \"unit\": \"kg\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUri}}/api/inventory/",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"inventory",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "add product",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"productId\": \"CB-001\",\n  \"name\": \"Cocoa Beans\",\n  \"description\": \"Premium cocoa beans\",\n  \"category\": \"Agriculture\",\n  \"saleType\": \"bulk\",\n  \"unitPrice\": 75000,\n  \"costPrice\": 50000,\n  \"quantity\": 120,\n  \"minStockLevel\": 20,\n  \"unit\": \"kg\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUri}}/api/inventory/create-property",
+											"host": [
+												"{{baseUri}}"
+											],
+											"path": [
+												"api",
+												"inventory",
+												"create-property"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "980"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3d4-MZJT2z72G+IbXGerNee0SxJc5ro\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Nov 2025 21:05:10 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"message\": \"Product created successfully\",\n    \"data\": {\n        \"productId\": \"CB-001\",\n        \"name\": \"Cocoa Beans\",\n        \"description\": \"Premium cocoa beans\",\n        \"category\": \"Agriculture\",\n        \"saleType\": \"bulk\",\n        \"unitPrice\": 75000,\n        \"costPrice\": 50000,\n        \"currency\": \"NGN\",\n        \"quantity\": 120,\n        \"minStockLevel\": 20,\n        \"totalValue\": 6000000,\n        \"status\": \"in_stock\",\n        \"unit\": \"kg\",\n        \"dimensions\": {\n            \"unit\": \"cm\"\n        },\n        \"analytics\": {\n            \"totalSold\": 0,\n            \"totalRevenue\": 0,\n            \"averageSalePrice\": 0,\n            \"popularityScore\": 0\n        },\n        \"owner\": \"690f7bdfc6fca0d05681513a\",\n        \"stockHistory\": [\n            {\n                \"type\": \"added\",\n                \"quantity\": 120,\n                \"previousQuantity\": 0,\n                \"newQuantity\": 120,\n                \"reason\": \"Initial stock\",\n                \"performedBy\": \"690f7bdfc6fca0d05681513a\",\n                \"_id\": \"690fb0863212801bbac2a638\",\n                \"date\": \"2025-11-08T21:05:10.518Z\",\n                \"id\": \"690fb0863212801bbac2a638\"\n            }\n        ],\n        \"isActive\": true,\n        \"tags\": [],\n        \"_id\": \"690fb0863212801bbac2a637\",\n        \"images\": [],\n        \"createdAt\": \"2025-11-08T21:05:10.519Z\",\n        \"updatedAt\": \"2025-11-08T21:05:10.529Z\",\n        \"__v\": 0,\n        \"profitMargin\": \"50.00\",\n        \"isLowStock\": false,\n        \"isOutOfStock\": false,\n        \"id\": \"690fb0863212801bbac2a637\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "get single product",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUri}}/api/inventory/690fb0863212801bbac2a637",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"inventory",
+										"690fb0863212801bbac2a637"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get single",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUri}}/api/inventory/690fb0863212801bbac2a637",
+											"host": [
+												"{{baseUri}}"
+											],
+											"path": [
+												"api",
+												"inventory",
+												"690fb0863212801bbac2a637"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "939"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3ab-Reft2YGR7KwmOeJQqYM0mrgg3P4\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Nov 2025 21:24:40 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"dimensions\": {\n            \"unit\": \"cm\"\n        },\n        \"analytics\": {\n            \"totalSold\": 0,\n            \"totalRevenue\": 0,\n            \"averageSalePrice\": 0,\n            \"popularityScore\": 0\n        },\n        \"_id\": \"690fb0863212801bbac2a637\",\n        \"productId\": \"CB-001\",\n        \"name\": \"Cocoa Beans\",\n        \"description\": \"Premium cocoa beans\",\n        \"category\": \"Agriculture\",\n        \"saleType\": \"bulk\",\n        \"unitPrice\": 75000,\n        \"costPrice\": 50000,\n        \"currency\": \"NGN\",\n        \"quantity\": 120,\n        \"minStockLevel\": 20,\n        \"totalValue\": 6000000,\n        \"status\": \"in_stock\",\n        \"unit\": \"kg\",\n        \"owner\": \"690f7bdfc6fca0d05681513a\",\n        \"stockHistory\": [\n            {\n                \"type\": \"added\",\n                \"quantity\": 120,\n                \"previousQuantity\": 0,\n                \"newQuantity\": 120,\n                \"reason\": \"Initial stock\",\n                \"performedBy\": \"690f7bdfc6fca0d05681513a\",\n                \"_id\": \"690fb0863212801bbac2a638\",\n                \"date\": \"2025-11-08T21:05:10.518Z\",\n                \"id\": \"690fb0863212801bbac2a638\"\n            }\n        ],\n        \"isActive\": true,\n        \"tags\": [],\n        \"images\": [],\n        \"createdAt\": \"2025-11-08T21:05:10.519Z\",\n        \"updatedAt\": \"2025-11-08T21:05:10.529Z\",\n        \"__v\": 0,\n        \"profitMargin\": \"50.00\",\n        \"isLowStock\": false,\n        \"isOutOfStock\": false,\n        \"id\": \"690fb0863212801bbac2a637\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "get products",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUri}}/api/inventory/",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"inventory",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get products",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUri}}/api/inventory/",
+											"host": [
+												"{{baseUri}}"
+											],
+											"path": [
+												"api",
+												"inventory",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "865"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"361-d83HLC8V+NfOa+rAF14XJo1OCM8\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Nov 2025 21:15:22 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"count\": 1,\n    \"total\": 1,\n    \"totalPages\": 1,\n    \"currentPage\": 1,\n    \"data\": [\n        {\n            \"_id\": \"690fb0863212801bbac2a637\",\n            \"productId\": \"CB-001\",\n            \"name\": \"Cocoa Beans\",\n            \"description\": \"Premium cocoa beans\",\n            \"category\": \"Agriculture\",\n            \"saleType\": \"bulk\",\n            \"unitPrice\": 75000,\n            \"costPrice\": 50000,\n            \"currency\": \"NGN\",\n            \"quantity\": 120,\n            \"minStockLevel\": 20,\n            \"totalValue\": 6000000,\n            \"status\": \"in_stock\",\n            \"unit\": \"kg\",\n            \"dimensions\": {\n                \"unit\": \"cm\"\n            },\n            \"analytics\": {\n                \"totalSold\": 0,\n                \"totalRevenue\": 0,\n                \"averageSalePrice\": 0,\n                \"popularityScore\": 0\n            },\n            \"owner\": \"690f7bdfc6fca0d05681513a\",\n            \"stockHistory\": [\n                {\n                    \"type\": \"added\",\n                    \"quantity\": 120,\n                    \"previousQuantity\": 0,\n                    \"newQuantity\": 120,\n                    \"reason\": \"Initial stock\",\n                    \"performedBy\": \"690f7bdfc6fca0d05681513a\",\n                    \"_id\": \"690fb0863212801bbac2a638\",\n                    \"date\": \"2025-11-08T21:05:10.518Z\"\n                }\n            ],\n            \"isActive\": true,\n            \"tags\": [],\n            \"images\": [],\n            \"createdAt\": \"2025-11-08T21:05:10.519Z\",\n            \"updatedAt\": \"2025-11-08T21:05:10.529Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "update product",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"productId\": \"CB-0012\",\n  \"name\": \"Cocoa Frog\",\n  \"description\": \"Premium cocoa frog\",\n  \"category\": \"Agriculture\",\n  \"saleType\": \"bulk\",\n  \"unitPrice\": 7500,\n  \"costPrice\": 5000,\n  \"quantity\": 1200,\n  \"minStockLevel\": 200,\n  \"unit\": \"kg\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUri}}/api/inventory/690fb0863212801bbac2a637",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"inventory",
+										"690fb0863212801bbac2a637"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "update product",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"productId\": \"CB-0012\",\n  \"name\": \"Cocoa Frog\",\n  \"description\": \"Premium cocoa frog\",\n  \"category\": \"Agriculture\",\n  \"saleType\": \"bulk\",\n  \"unitPrice\": 7500,\n  \"costPrice\": 5000,\n  \"quantity\": 1200,\n  \"minStockLevel\": 200,\n  \"unit\": \"kg\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUri}}/api/inventory/690fb0863212801bbac2a637",
+											"host": [
+												"{{baseUri}}"
+											],
+											"path": [
+												"api",
+												"inventory",
+												"690fb0863212801bbac2a637"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "977"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3d1-0ARa6EKc8nOmxMCQnJLbcMaPf1Q\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Nov 2025 21:25:56 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"message\": \"Product updated successfully\",\n    \"data\": {\n        \"dimensions\": {\n            \"unit\": \"cm\"\n        },\n        \"analytics\": {\n            \"totalSold\": 0,\n            \"totalRevenue\": 0,\n            \"averageSalePrice\": 0,\n            \"popularityScore\": 0\n        },\n        \"_id\": \"690fb0863212801bbac2a637\",\n        \"productId\": \"CB-0012\",\n        \"name\": \"Cocoa Frog\",\n        \"description\": \"Premium cocoa frog\",\n        \"category\": \"Agriculture\",\n        \"saleType\": \"bulk\",\n        \"unitPrice\": 7500,\n        \"costPrice\": 5000,\n        \"currency\": \"NGN\",\n        \"quantity\": 120,\n        \"minStockLevel\": 200,\n        \"totalValue\": 6000000,\n        \"status\": \"in_stock\",\n        \"unit\": \"kg\",\n        \"owner\": \"690f7bdfc6fca0d05681513a\",\n        \"stockHistory\": [\n            {\n                \"type\": \"added\",\n                \"quantity\": 120,\n                \"previousQuantity\": 0,\n                \"newQuantity\": 120,\n                \"reason\": \"Initial stock\",\n                \"performedBy\": \"690f7bdfc6fca0d05681513a\",\n                \"_id\": \"690fb0863212801bbac2a638\",\n                \"date\": \"2025-11-08T21:05:10.518Z\",\n                \"id\": \"690fb0863212801bbac2a638\"\n            }\n        ],\n        \"isActive\": true,\n        \"tags\": [],\n        \"images\": [],\n        \"createdAt\": \"2025-11-08T21:05:10.519Z\",\n        \"updatedAt\": \"2025-11-08T21:25:56.916Z\",\n        \"__v\": 0,\n        \"profitMargin\": \"50.00\",\n        \"isLowStock\": true,\n        \"isOutOfStock\": false,\n        \"id\": \"690fb0863212801bbac2a637\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "delete property",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUri}}/api/inventory/690fb0863212801bbac2a637",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"inventory",
+										"690fb0863212801bbac2a637"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get out of stock",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUri}}/api/inventory/out-of-stock",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"inventory",
+										"out-of-stock"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "out of stock",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUri}}/api/inventory/out-of-stock",
+											"host": [
+												"{{baseUri}}"
+											],
+											"path": [
+												"api",
+												"inventory",
+												"out-of-stock"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "36"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"24-YA2qaqoHN76SgtFfK4UBGqyVP1w\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Nov 2025 21:27:38 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"count\": 0,\n    \"data\": []\n}"
+								}
+							]
+						},
+						{
+							"name": "get low stock properties",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUri}}/api/inventory/low-stock",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"inventory",
+										"low-stock"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get low stock properties",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUri}}/api/inventory/low-stock",
+											"host": [
+												"{{baseUri}}"
+											],
+											"path": [
+												"api",
+												"inventory",
+												"low-stock"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "948"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3b4-R/86aPfiU5CIO8mj3lyHuTcHYRM\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Nov 2025 21:42:49 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"count\": 1,\n    \"data\": [\n        {\n            \"dimensions\": {\n                \"unit\": \"cm\"\n            },\n            \"analytics\": {\n                \"totalSold\": 0,\n                \"totalRevenue\": 0,\n                \"averageSalePrice\": 0,\n                \"popularityScore\": 0\n            },\n            \"_id\": \"690fb0863212801bbac2a637\",\n            \"productId\": \"CB-0012\",\n            \"name\": \"Cocoa Frog\",\n            \"description\": \"Premium cocoa frog\",\n            \"category\": \"Agriculture\",\n            \"saleType\": \"bulk\",\n            \"unitPrice\": 7500,\n            \"costPrice\": 5000,\n            \"currency\": \"NGN\",\n            \"quantity\": 120,\n            \"minStockLevel\": 200,\n            \"totalValue\": 6000000,\n            \"status\": \"in_stock\",\n            \"unit\": \"kg\",\n            \"owner\": \"690f7bdfc6fca0d05681513a\",\n            \"stockHistory\": [\n                {\n                    \"type\": \"added\",\n                    \"quantity\": 120,\n                    \"previousQuantity\": 0,\n                    \"newQuantity\": 120,\n                    \"reason\": \"Initial stock\",\n                    \"performedBy\": \"690f7bdfc6fca0d05681513a\",\n                    \"_id\": \"690fb0863212801bbac2a638\",\n                    \"date\": \"2025-11-08T21:05:10.518Z\",\n                    \"id\": \"690fb0863212801bbac2a638\"\n                }\n            ],\n            \"isActive\": true,\n            \"tags\": [],\n            \"images\": [],\n            \"createdAt\": \"2025-11-08T21:05:10.519Z\",\n            \"updatedAt\": \"2025-11-08T21:25:56.916Z\",\n            \"__v\": 0,\n            \"profitMargin\": \"50.00\",\n            \"isLowStock\": true,\n            \"isOutOfStock\": false,\n            \"id\": \"690fb0863212801bbac2a637\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "statistics",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUri}}/api/inventory/statistics",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"inventory",
+										"statistics"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "statistics",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUri}}/api/inventory/statistics",
+											"host": [
+												"{{baseUri}}"
+											],
+											"path": [
+												"api",
+												"inventory",
+												"statistics"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "250"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"fa-x+1LYGT0I2uQL07hkp9wJKun74c\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Nov 2025 21:43:54 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"overview\": {\n            \"_id\": null,\n            \"totalProducts\": 1,\n            \"totalQuantity\": 120,\n            \"totalValue\": 6000000,\n            \"lowStockCount\": 1,\n            \"outOfStockCount\": 0,\n            \"totalRevenue\": 0,\n            \"totalItemsSold\": 0\n        },\n        \"categories\": [\n            {\n                \"_id\": \"Agriculture\",\n                \"count\": 1,\n                \"totalValue\": 6000000\n            }\n        ]\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "top-selling",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUri}}/api/inventory/top-selling",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"inventory",
+										"top-selling"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "top selling",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUri}}/api/inventory/top-selling",
+											"host": [
+												"{{baseUri}}"
+											],
+											"path": [
+												"api",
+												"inventory",
+												"top-selling"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "948"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3b4-R/86aPfiU5CIO8mj3lyHuTcHYRM\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Nov 2025 21:45:18 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"count\": 1,\n    \"data\": [\n        {\n            \"dimensions\": {\n                \"unit\": \"cm\"\n            },\n            \"analytics\": {\n                \"totalSold\": 0,\n                \"totalRevenue\": 0,\n                \"averageSalePrice\": 0,\n                \"popularityScore\": 0\n            },\n            \"_id\": \"690fb0863212801bbac2a637\",\n            \"productId\": \"CB-0012\",\n            \"name\": \"Cocoa Frog\",\n            \"description\": \"Premium cocoa frog\",\n            \"category\": \"Agriculture\",\n            \"saleType\": \"bulk\",\n            \"unitPrice\": 7500,\n            \"costPrice\": 5000,\n            \"currency\": \"NGN\",\n            \"quantity\": 120,\n            \"minStockLevel\": 200,\n            \"totalValue\": 6000000,\n            \"status\": \"in_stock\",\n            \"unit\": \"kg\",\n            \"owner\": \"690f7bdfc6fca0d05681513a\",\n            \"stockHistory\": [\n                {\n                    \"type\": \"added\",\n                    \"quantity\": 120,\n                    \"previousQuantity\": 0,\n                    \"newQuantity\": 120,\n                    \"reason\": \"Initial stock\",\n                    \"performedBy\": \"690f7bdfc6fca0d05681513a\",\n                    \"_id\": \"690fb0863212801bbac2a638\",\n                    \"date\": \"2025-11-08T21:05:10.518Z\",\n                    \"id\": \"690fb0863212801bbac2a638\"\n                }\n            ],\n            \"isActive\": true,\n            \"tags\": [],\n            \"images\": [],\n            \"createdAt\": \"2025-11-08T21:05:10.519Z\",\n            \"updatedAt\": \"2025-11-08T21:25:56.916Z\",\n            \"__v\": 0,\n            \"profitMargin\": \"50.00\",\n            \"isLowStock\": true,\n            \"isOutOfStock\": false,\n            \"id\": \"690fb0863212801bbac2a637\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "export",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUri}}/api/inventory/export",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"inventory",
+										"export"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "export",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUri}}/api/inventory/export",
+											"host": [
+												"{{baseUri}}"
+											],
+											"path": [
+												"api",
+												"inventory",
+												"export"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/csv; charset=utf-8"
+										},
+										{
+											"key": "Content-Disposition",
+											"value": "attachment; filename=inventory-1762638359812.csv"
+										},
+										{
+											"key": "Content-Length",
+											"value": "138"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"8a-c1n0NtE7guIn/KhbXIOBwXqXLEE\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Nov 2025 21:45:59 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "Product ID,Name,Category,Quantity,Unit Price,Cost Price,Total Value,Status\nCB-0012,\"Cocoa Frog\",Agriculture,120,7500,5000,6000000,in_stock"
+								}
+							]
+						},
+						{
+							"name": "add-stock",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"quantity\": 50,\n  \"reason\": \"New delivery from supplier\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUri}}/api/inventory/690fb0863212801bbac2a637/add-stock",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"inventory",
+										"690fb0863212801bbac2a637",
+										"add-stock"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "add stock",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"quantity\": 50,\n  \"reason\": \"New delivery from supplier\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUri}}/api/inventory/690fb0863212801bbac2a637/add-stock",
+											"host": [
+												"{{baseUri}}"
+											],
+											"path": [
+												"api",
+												"inventory",
+												"690fb0863212801bbac2a637",
+												"add-stock"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1223"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"4c7-K4I1UGng9T52BcVPN2yfaggJ2cw\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Nov 2025 21:51:35 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"message\": \"Stock added successfully\",\n    \"data\": {\n        \"dimensions\": {\n            \"unit\": \"cm\"\n        },\n        \"analytics\": {\n            \"totalSold\": 0,\n            \"totalRevenue\": 0,\n            \"averageSalePrice\": 0,\n            \"popularityScore\": 0\n        },\n        \"_id\": \"690fb0863212801bbac2a637\",\n        \"productId\": \"CB-0012\",\n        \"name\": \"Cocoa Frog\",\n        \"description\": \"Premium cocoa frog\",\n        \"category\": \"Agriculture\",\n        \"saleType\": \"bulk\",\n        \"unitPrice\": 7500,\n        \"costPrice\": 5000,\n        \"currency\": \"NGN\",\n        \"quantity\": 170,\n        \"minStockLevel\": 200,\n        \"totalValue\": 850000,\n        \"status\": \"low_stock\",\n        \"unit\": \"kg\",\n        \"owner\": \"690f7bdfc6fca0d05681513a\",\n        \"stockHistory\": [\n            {\n                \"type\": \"added\",\n                \"quantity\": 120,\n                \"previousQuantity\": 0,\n                \"newQuantity\": 120,\n                \"reason\": \"Initial stock\",\n                \"performedBy\": \"690f7bdfc6fca0d05681513a\",\n                \"_id\": \"690fb0863212801bbac2a638\",\n                \"date\": \"2025-11-08T21:05:10.518Z\",\n                \"id\": \"690fb0863212801bbac2a638\"\n            },\n            {\n                \"type\": \"added\",\n                \"quantity\": 50,\n                \"previousQuantity\": 120,\n                \"newQuantity\": 170,\n                \"reason\": \"New delivery from supplier\",\n                \"performedBy\": \"690f7bdfc6fca0d05681513a\",\n                \"_id\": \"690fbb67a8b3e25e1aca8e8c\",\n                \"date\": \"2025-11-08T21:51:35.042Z\",\n                \"id\": \"690fbb67a8b3e25e1aca8e8c\"\n            }\n        ],\n        \"isActive\": true,\n        \"tags\": [],\n        \"images\": [],\n        \"createdAt\": \"2025-11-08T21:05:10.519Z\",\n        \"updatedAt\": \"2025-11-08T21:51:35.049Z\",\n        \"__v\": 1,\n        \"profitMargin\": \"50.00\",\n        \"isLowStock\": true,\n        \"isOutOfStock\": false,\n        \"id\": \"690fb0863212801bbac2a637\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "remove-stock",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"quantity\": 50,\n  \"reason\": \"New delivery from supplier\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUri}}/api/inventory/690fb0863212801bbac2a637/remove-stock",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"inventory",
+										"690fb0863212801bbac2a637",
+										"remove-stock"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "removed stock",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"quantity\": 50,\n  \"reason\": \"New delivery from supplier\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUri}}/api/inventory/690fb0863212801bbac2a637/remove-stock",
+											"host": [
+												"{{baseUri}}"
+											],
+											"path": [
+												"api",
+												"inventory",
+												"690fb0863212801bbac2a637",
+												"remove-stock"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1477"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"5c5-L1rEt+ZRulcK6pn6FDhGaAFQKUM\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Nov 2025 21:53:00 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"message\": \"Stock removed successfully\",\n    \"data\": {\n        \"dimensions\": {\n            \"unit\": \"cm\"\n        },\n        \"analytics\": {\n            \"totalSold\": 0,\n            \"totalRevenue\": 0,\n            \"averageSalePrice\": 0,\n            \"popularityScore\": 0\n        },\n        \"_id\": \"690fb0863212801bbac2a637\",\n        \"productId\": \"CB-0012\",\n        \"name\": \"Cocoa Frog\",\n        \"description\": \"Premium cocoa frog\",\n        \"category\": \"Agriculture\",\n        \"saleType\": \"bulk\",\n        \"unitPrice\": 7500,\n        \"costPrice\": 5000,\n        \"currency\": \"NGN\",\n        \"quantity\": 120,\n        \"minStockLevel\": 200,\n        \"totalValue\": 600000,\n        \"status\": \"low_stock\",\n        \"unit\": \"kg\",\n        \"owner\": \"690f7bdfc6fca0d05681513a\",\n        \"stockHistory\": [\n            {\n                \"type\": \"added\",\n                \"quantity\": 120,\n                \"previousQuantity\": 0,\n                \"newQuantity\": 120,\n                \"reason\": \"Initial stock\",\n                \"performedBy\": \"690f7bdfc6fca0d05681513a\",\n                \"_id\": \"690fb0863212801bbac2a638\",\n                \"date\": \"2025-11-08T21:05:10.518Z\",\n                \"id\": \"690fb0863212801bbac2a638\"\n            },\n            {\n                \"type\": \"added\",\n                \"quantity\": 50,\n                \"previousQuantity\": 120,\n                \"newQuantity\": 170,\n                \"reason\": \"New delivery from supplier\",\n                \"performedBy\": \"690f7bdfc6fca0d05681513a\",\n                \"_id\": \"690fbb67a8b3e25e1aca8e8c\",\n                \"date\": \"2025-11-08T21:51:35.042Z\",\n                \"id\": \"690fbb67a8b3e25e1aca8e8c\"\n            },\n            {\n                \"type\": \"removed\",\n                \"quantity\": 50,\n                \"previousQuantity\": 170,\n                \"newQuantity\": 120,\n                \"reason\": \"New delivery from supplier\",\n                \"performedBy\": \"690f7bdfc6fca0d05681513a\",\n                \"_id\": \"690fbbbca8b3e25e1aca8e94\",\n                \"date\": \"2025-11-08T21:53:00.705Z\",\n                \"id\": \"690fbbbca8b3e25e1aca8e94\"\n            }\n        ],\n        \"isActive\": true,\n        \"tags\": [],\n        \"images\": [],\n        \"createdAt\": \"2025-11-08T21:05:10.519Z\",\n        \"updatedAt\": \"2025-11-08T21:53:00.711Z\",\n        \"__v\": 2,\n        \"profitMargin\": \"50.00\",\n        \"isLowStock\": true,\n        \"isOutOfStock\": false,\n        \"id\": \"690fb0863212801bbac2a637\"\n    }\n}"
+								}
+							]
+						}
+					],
+					"description": "_**only users with \"' product_seller '\" buswiness type can acces this, the rest are unauthorized**_",
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGY3YmRmYzZmY2EwZDA1NjgxNTEzYSIsImlhdCI6MTc2MjYyNTU5MCwiZXhwIjoxNzYzMjMwMzkwfQ.DRE-6DcLLMAWiva30q8mqFRQnmBhQ_xLu3rnbClvROo",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {},
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "SERVICES",
+					"item": [
+						{
+							"name": "create service",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Hair Styling\",\n    \"description\": \"Professional hair styling\",\n    \"category\": \"beauty_wellness\",\n    \"basePrice\": 5000,\n    \"duration\": {\n        \"value\": 60\n    }\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUri}}/api/services/",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"services",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "create service",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Hair Styling\",\n    \"description\": \"Professional hair styling\",\n    \"category\": \"beauty_wellness\",\n    \"basePrice\": 5000,\n    \"duration\": {\n        \"value\": 60\n    }\n}\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUri}}/api/services/",
+											"host": [
+												"{{baseUri}}"
+											],
+											"path": [
+												"api",
+												"services",
+												""
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "926"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"39e-KgrkwW1s66i2++Ctheaqw3p/7AA\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Nov 2025 22:52:00 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"message\": \"Service created successfully\",\n    \"data\": {\n        \"serviceId\": \"SVC-MHQVQ6JD-T4POZ\",\n        \"provider\": \"690fc90e1ca0f71cae0264ea\",\n        \"name\": \"Hair Styling\",\n        \"description\": \"Professional hair styling\",\n        \"category\": \"beauty_wellness\",\n        \"basePrice\": 5000,\n        \"pricingType\": \"fixed\",\n        \"currency\": \"NGN\",\n        \"duration\": {\n            \"value\": 60,\n            \"unit\": \"minutes\"\n        },\n        \"locationType\": \"on_site\",\n        \"availability\": {\n            \"days\": [],\n            \"timeSlots\": [],\n            \"advanceBookingDays\": 30,\n            \"minimumNotice\": 2\n        },\n        \"maxBookingsPerSlot\": 1,\n        \"simultaneousBookings\": false,\n        \"videos\": [],\n        \"addOns\": [],\n        \"rating\": {\n            \"average\": 0,\n            \"count\": 0\n        },\n        \"statistics\": {\n            \"totalBookings\": 0,\n            \"completedBookings\": 0,\n            \"cancelledBookings\": 0,\n            \"totalRevenue\": 0,\n            \"popularityScore\": 0\n        },\n        \"isActive\": true,\n        \"isPublished\": false,\n        \"tags\": [],\n        \"featured\": false,\n        \"_id\": \"690fc9901ca0f71cae0264ef\",\n        \"images\": [],\n        \"createdAt\": \"2025-11-08T22:52:00.041Z\",\n        \"updatedAt\": \"2025-11-08T22:52:00.050Z\",\n        \"__v\": 0,\n        \"hourlyRate\": \"5000.00\",\n        \"isPopular\": false,\n        \"id\": \"690fc9901ca0f71cae0264ef\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "get all services",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUri}}/api/services/",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"services",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get all services",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUri}}/api/services/",
+											"host": [
+												"{{baseUri}}"
+											],
+											"path": [
+												"api",
+												"services",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "865"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"361-eE6xCBLyXYiyCPjd74/5rKluYCU\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Nov 2025 22:56:33 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"count\": 1,\n    \"total\": 1,\n    \"totalPages\": 1,\n    \"currentPage\": 1,\n    \"data\": [\n        {\n            \"_id\": \"690fc9901ca0f71cae0264ef\",\n            \"serviceId\": \"SVC-MHQVQ6JD-T4POZ\",\n            \"provider\": \"690fc90e1ca0f71cae0264ea\",\n            \"name\": \"Hair Styling\",\n            \"description\": \"Professional hair styling\",\n            \"category\": \"beauty_wellness\",\n            \"basePrice\": 5000,\n            \"pricingType\": \"fixed\",\n            \"currency\": \"NGN\",\n            \"duration\": {\n                \"value\": 60,\n                \"unit\": \"minutes\"\n            },\n            \"locationType\": \"on_site\",\n            \"availability\": {\n                \"days\": [],\n                \"timeSlots\": [],\n                \"advanceBookingDays\": 30,\n                \"minimumNotice\": 2\n            },\n            \"maxBookingsPerSlot\": 1,\n            \"simultaneousBookings\": false,\n            \"videos\": [],\n            \"addOns\": [],\n            \"rating\": {\n                \"average\": 0,\n                \"count\": 0\n            },\n            \"statistics\": {\n                \"totalBookings\": 0,\n                \"completedBookings\": 0,\n                \"cancelledBookings\": 0,\n                \"totalRevenue\": 0,\n                \"popularityScore\": 0\n            },\n            \"isActive\": true,\n            \"isPublished\": false,\n            \"tags\": [],\n            \"featured\": false,\n            \"images\": [],\n            \"createdAt\": \"2025-11-08T22:52:00.041Z\",\n            \"updatedAt\": \"2025-11-08T22:52:00.050Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "get single service",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUri}}/api/services/690fc9901ca0f71cae0264ef",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"services",
+										"690fc9901ca0f71cae0264ef"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get single service",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUri}}/api/services/690fc9901ca0f71cae0264ef",
+											"host": [
+												"{{baseUri}}"
+											],
+											"path": [
+												"api",
+												"services",
+												"690fc9901ca0f71cae0264ef"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "885"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"375-tWtSzWFQPJv0K2D1E6BuyFN2Euw\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 08 Nov 2025 22:58:24 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"duration\": {\n            \"value\": 60,\n            \"unit\": \"minutes\"\n        },\n        \"availability\": {\n            \"days\": [],\n            \"timeSlots\": [],\n            \"advanceBookingDays\": 30,\n            \"minimumNotice\": 2\n        },\n        \"rating\": {\n            \"average\": 0,\n            \"count\": 0\n        },\n        \"statistics\": {\n            \"totalBookings\": 0,\n            \"completedBookings\": 0,\n            \"cancelledBookings\": 0,\n            \"totalRevenue\": 0,\n            \"popularityScore\": 0\n        },\n        \"_id\": \"690fc9901ca0f71cae0264ef\",\n        \"serviceId\": \"SVC-MHQVQ6JD-T4POZ\",\n        \"provider\": \"690fc90e1ca0f71cae0264ea\",\n        \"name\": \"Hair Styling\",\n        \"description\": \"Professional hair styling\",\n        \"category\": \"beauty_wellness\",\n        \"basePrice\": 5000,\n        \"pricingType\": \"fixed\",\n        \"currency\": \"NGN\",\n        \"locationType\": \"on_site\",\n        \"maxBookingsPerSlot\": 1,\n        \"simultaneousBookings\": false,\n        \"videos\": [],\n        \"addOns\": [],\n        \"isActive\": true,\n        \"isPublished\": false,\n        \"tags\": [],\n        \"featured\": false,\n        \"images\": [],\n        \"createdAt\": \"2025-11-08T22:52:00.041Z\",\n        \"updatedAt\": \"2025-11-08T22:52:00.050Z\",\n        \"__v\": 0,\n        \"hourlyRate\": \"5000.00\",\n        \"isPopular\": false,\n        \"id\": \"690fc9901ca0f71cae0264ef\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "update service",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Hair Barbing\",\n    \"description\": \"Professional hair barbing\",\n    \"category\": \"beauty_wellness\",\n    \"basePrice\": 5000,\n    \"duration\": {\n        \"value\": 60\n    }\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUri}}/api/services/690fc9901ca0f71cae0264ef",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"services",
+										"690fc9901ca0f71cae0264ef"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "update service",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"name\": \"Hair Barbing\",\n    \"description\": \"Professional hair barbing\",\n    \"category\": \"beauty_wellness\",\n    \"basePrice\": 5000,\n    \"duration\": {\n        \"value\": 60\n    }\n}\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUri}}/api/services/690fc9901ca0f71cae0264ef",
+											"host": [
+												"{{baseUri}}"
+											],
+											"path": [
+												"api",
+												"services",
+												"690fc9901ca0f71cae0264ef"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "926"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"39e-1GO2rvbWfJaJvTFOrFqkKf0kGw8\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 09 Nov 2025 15:42:57 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"message\": \"Service updated successfully\",\n    \"data\": {\n        \"duration\": {\n            \"unit\": \"minutes\",\n            \"value\": 60\n        },\n        \"availability\": {\n            \"days\": [],\n            \"timeSlots\": [],\n            \"advanceBookingDays\": 30,\n            \"minimumNotice\": 2\n        },\n        \"rating\": {\n            \"average\": 0,\n            \"count\": 0\n        },\n        \"statistics\": {\n            \"totalBookings\": 0,\n            \"completedBookings\": 0,\n            \"cancelledBookings\": 0,\n            \"totalRevenue\": 0,\n            \"popularityScore\": 0\n        },\n        \"_id\": \"690fc9901ca0f71cae0264ef\",\n        \"serviceId\": \"SVC-MHQVQ6JD-T4POZ\",\n        \"provider\": \"690fc90e1ca0f71cae0264ea\",\n        \"name\": \"Hair Barbing\",\n        \"description\": \"Professional hair barbing\",\n        \"category\": \"beauty_wellness\",\n        \"basePrice\": 5000,\n        \"pricingType\": \"fixed\",\n        \"currency\": \"NGN\",\n        \"locationType\": \"on_site\",\n        \"maxBookingsPerSlot\": 1,\n        \"simultaneousBookings\": false,\n        \"videos\": [],\n        \"addOns\": [],\n        \"isActive\": true,\n        \"isPublished\": false,\n        \"tags\": [],\n        \"featured\": false,\n        \"images\": [],\n        \"createdAt\": \"2025-11-08T22:52:00.041Z\",\n        \"updatedAt\": \"2025-11-09T15:42:57.703Z\",\n        \"__v\": 0,\n        \"hourlyRate\": \"5000.00\",\n        \"isPopular\": false,\n        \"id\": \"690fc9901ca0f71cae0264ef\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "delete service",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUri}}/api/services/690fc9901ca0f71cae0264ef",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"services",
+										"690fc9901ca0f71cae0264ef"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get statictics",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": [
+								{
+									"name": "New Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUri}}/api/services/690fc9901ca0f71cae0264ef/statistics",
+											"host": [
+												"{{baseUri}}"
+											],
+											"path": [
+												"api",
+												"services",
+												"690fc9901ca0f71cae0264ef",
+												"statistics"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "195"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"c3-S/ts+ix/WIjnvcR0ry4OljEYjHs\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 09 Nov 2025 15:44:21 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"data\": {\n        \"totalBookings\": 0,\n        \"completedBookings\": 0,\n        \"cancelledBookings\": 0,\n        \"totalRevenue\": 0,\n        \"popularityScore\": 0,\n        \"completionRate\": 0,\n        \"averageRevenue\": 0,\n        \"rating\": {\n            \"average\": 0,\n            \"count\": 0\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "publish service",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{baseUri}}/api/services/690fc9901ca0f71cae0264ef/publish",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"services",
+										"690fc9901ca0f71cae0264ef",
+										"publish"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "publish service",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"url": {
+											"raw": "{{baseUri}}/api/services/690fc9901ca0f71cae0264ef/publish",
+											"host": [
+												"{{baseUri}}"
+											],
+											"path": [
+												"api",
+												"services",
+												"690fc9901ca0f71cae0264ef",
+												"publish"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "927"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"39f-Llr9+DT+QMWRC0K/nGzaTkgai2I\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 09 Nov 2025 16:12:15 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"message\": \"Service published successfully\",\n    \"data\": {\n        \"duration\": {\n            \"unit\": \"minutes\",\n            \"value\": 60\n        },\n        \"availability\": {\n            \"days\": [],\n            \"timeSlots\": [],\n            \"advanceBookingDays\": 30,\n            \"minimumNotice\": 2\n        },\n        \"rating\": {\n            \"average\": 0,\n            \"count\": 0\n        },\n        \"statistics\": {\n            \"totalBookings\": 0,\n            \"completedBookings\": 0,\n            \"cancelledBookings\": 0,\n            \"totalRevenue\": 0,\n            \"popularityScore\": 0\n        },\n        \"_id\": \"690fc9901ca0f71cae0264ef\",\n        \"serviceId\": \"SVC-MHQVQ6JD-T4POZ\",\n        \"provider\": \"690fc90e1ca0f71cae0264ea\",\n        \"name\": \"Hair Barbing\",\n        \"description\": \"Professional hair barbing\",\n        \"category\": \"beauty_wellness\",\n        \"basePrice\": 5000,\n        \"pricingType\": \"fixed\",\n        \"currency\": \"NGN\",\n        \"locationType\": \"on_site\",\n        \"maxBookingsPerSlot\": 1,\n        \"simultaneousBookings\": false,\n        \"videos\": [],\n        \"addOns\": [],\n        \"isActive\": true,\n        \"isPublished\": true,\n        \"tags\": [],\n        \"featured\": false,\n        \"images\": [],\n        \"createdAt\": \"2025-11-08T22:52:00.041Z\",\n        \"updatedAt\": \"2025-11-09T16:12:15.086Z\",\n        \"__v\": 0,\n        \"hourlyRate\": \"5000.00\",\n        \"isPopular\": false,\n        \"id\": \"690fc9901ca0f71cae0264ef\"\n    }\n}"
+								}
+							]
+						}
+					],
+					"description": "_**only users with \"' service_provider '\" buswiness type can acces this, the rest are unauthorized**_",
+					"auth": {
+						"type": "bearer",
+						"bearer": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5MGZjOTBlMWNhMGY3MWNhZTAyNjRlYSIsImlhdCI6MTc2MjY0MjE5MCwiZXhwIjoxNzYzMjQ2OTkwfQ.QSsbDV20FiUn0K5wzwoFiaZb3XxUjZxgokjE1oIESNA",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {},
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "PUBLIC ROUTES FOR SERVICE",
+					"item": [
+						{
+							"name": "get published services",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUri}}/api/services/published",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"services",
+										"published"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get publish servces",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUri}}/api/services/published",
+											"host": [
+												"{{baseUri}}"
+											],
+											"path": [
+												"api",
+												"services",
+												"published"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "957"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3bd-KyGEQAdA9ZwRKAAsCFaxx3FPHNY\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 09 Nov 2025 16:13:09 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"count\": 1,\n    \"data\": [\n        {\n            \"duration\": {\n                \"value\": 60,\n                \"unit\": \"minutes\"\n            },\n            \"availability\": {\n                \"days\": [],\n                \"timeSlots\": [],\n                \"advanceBookingDays\": 30,\n                \"minimumNotice\": 2\n            },\n            \"rating\": {\n                \"average\": 0,\n                \"count\": 0\n            },\n            \"statistics\": {\n                \"totalBookings\": 0,\n                \"completedBookings\": 0,\n                \"cancelledBookings\": 0,\n                \"totalRevenue\": 0,\n                \"popularityScore\": 0\n            },\n            \"_id\": \"690fc9901ca0f71cae0264ef\",\n            \"serviceId\": \"SVC-MHQVQ6JD-T4POZ\",\n            \"provider\": {\n                \"profile\": {\n                    \"rating\": 0\n                },\n                \"_id\": \"690fc90e1ca0f71cae0264ea\",\n                \"businessName\": \"John's Store\"\n            },\n            \"name\": \"Hair Barbing\",\n            \"description\": \"Professional hair barbing\",\n            \"category\": \"beauty_wellness\",\n            \"basePrice\": 5000,\n            \"pricingType\": \"fixed\",\n            \"currency\": \"NGN\",\n            \"locationType\": \"on_site\",\n            \"maxBookingsPerSlot\": 1,\n            \"simultaneousBookings\": false,\n            \"videos\": [],\n            \"addOns\": [],\n            \"isActive\": true,\n            \"isPublished\": true,\n            \"tags\": [],\n            \"featured\": false,\n            \"images\": [],\n            \"createdAt\": \"2025-11-08T22:52:00.041Z\",\n            \"updatedAt\": \"2025-11-09T16:12:15.086Z\",\n            \"__v\": 0,\n            \"hourlyRate\": \"5000.00\",\n            \"isPopular\": false,\n            \"id\": \"690fc9901ca0f71cae0264ef\"\n        }\n    ]\n}"
+								}
+							]
+						},
+						{
+							"name": "get top rated",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUri}}/api/services/top-rated",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"services",
+										"top-rated"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get top rated services",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUri}}/api/services/top-rated",
+											"host": [
+												"{{baseUri}}"
+											],
+											"path": [
+												"api",
+												"services",
+												"top-rated"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "36"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"24-YA2qaqoHN76SgtFfK4UBGqyVP1w\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 09 Nov 2025 16:14:02 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"count\": 0,\n    \"data\": []\n}"
+								}
+							]
+						},
+						{
+							"name": "get featured services",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUri}}/api/services/featured",
+									"host": [
+										"{{baseUri}}"
+									],
+									"path": [
+										"api",
+										"services",
+										"featured"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get featured services",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUri}}/api/services/featured",
+											"host": [
+												"{{baseUri}}"
+											],
+											"path": [
+												"api",
+												"services",
+												"featured"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "36"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"24-YA2qaqoHN76SgtFfK4UBGqyVP1w\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 09 Nov 2025 16:16:27 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"count\": 0,\n    \"data\": []\n}"
+								}
+							]
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "BOOKING",
+			"item": [
+				{
+					"name": "book a service",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"serviceId\": \"SERVICE_ID_HERE\",\n    \"bookingDate\": \"2024-01-25\",\n    \"startTime\": \"10:00\",\n    \"endTime\": \"11:00\",\n    \"duration\": 60,\n    \"customerNotes\": \"Please arrive on time\",\n    \"selectedAddOns\": [\n        {\n            \"name\": \"Hair Treatment\",\n            \"price\": 2000\n        }\n    ],\n    \"location\": {\n        \"address\": \"123 Customer Street\",\n        \"city\": \"Lagos\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUri",
+			"value": ""
+		}
+	]
+}

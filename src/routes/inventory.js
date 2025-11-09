@@ -1,9 +1,45 @@
 const express = require('express');
 const router = express.Router();
-const ctrl = require('../controllers/inventory');
-const auth = require('../middleware/auth');
-router.get('/', auth, ctrl.list);
-router.post('/', auth, ctrl.create);
-router.put('/:id/qty', auth, ctrl.updateQty);
-router.delete('/:id', auth, ctrl.remove);
+const {
+  getProducts,
+  getProduct,
+  createProduct,
+  updateProduct,
+  deleteProduct,
+  addStock,
+  removeStock,
+  getLowStockProducts,
+  getOutOfStockProducts,
+  getTopSellingProducts,
+  getInventoryStatistics,
+  exportInventory
+} = require('../controllers/inventory');
+
+const { protect, checkEmailVerified, logActivity } = require('../middleware/auth');
+
+// All routes require authentication
+router.use(protect);
+
+// Special routes (must come before /:id)
+router.get('/low-stock', getLowStockProducts);
+router.get('/out-of-stock', getOutOfStockProducts);
+router.get('/top-selling', getTopSellingProducts);
+router.get('/statistics', getInventoryStatistics);
+router.get('/export', exportInventory);
+
+// Main CRUD routes
+router.route('/')
+  .get(getProducts)
+  .post(checkEmailVerified, logActivity('product_created'), createProduct);
+
+router.route('/:id')
+  .get(getProduct)
+  .put(logActivity('product_updated'), updateProduct)
+  .delete(logActivity('product_deleted'), deleteProduct);
+
+// Stock management
+router.post('/:id/add-stock', logActivity('stock_added'), addStock);
+router.post('/:id/remove-stock', logActivity('stock_removed'), removeStock);
+
 module.exports = router;
+

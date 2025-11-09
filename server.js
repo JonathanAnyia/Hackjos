@@ -15,8 +15,8 @@ const clientsRoutes = require('./src/routes/clients');
 const expensesRoutes = require('./src/routes/expenses');
 const inventoryRoutes = require('./src/routes/inventory');
 const salesRoutes = require('./src/routes/sales');
-const adminRoutes = require('./src/routes/admin');
-const payRoutes = require('./src/routes/paystack_sim');
+// const adminRoutes = require('./src/routes/admin');
+// const payRoutes = require('./src/routes/paystack_sim');
 
 
 const app = express();
@@ -36,8 +36,8 @@ app.use('/api/clients', clientsRoutes);
 app.use('/api/expenses', expensesRoutes);
 app.use('/api/inventory', inventoryRoutes);
 app.use('/api/sales', salesRoutes);
-app.use('/api/admin', adminRoutes);
-app.use('/api/pay', payRoutes);
+// app.use('/api/admin', adminRoutes);
+// app.use('/api/pay', payRoutes);
 
 
 app.get('/', (req, res) => res.json({ ok: true }));
