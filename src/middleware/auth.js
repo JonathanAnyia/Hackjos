@@ -130,7 +130,7 @@ const rateLimitStore = new Map();
 exports.rateLimit = (options = {}) => {
   const {
     windowMs = 15 * 60 * 1000, // 15 minutes
-    max = 5, // limit each identifier to 5 requests per windowMs
+    max = 20, // limit each identifier to 5 requests per windowMs
     message = 'Too many requests, please try again later',
     identifier = 'ip' // can be 'ip' or 'user'
   } = options;
