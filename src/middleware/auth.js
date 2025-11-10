@@ -92,6 +92,8 @@ exports.checkEmailVerified = (req, res, next) => {
     });
   }
   next();
+  console.log("req.user:", req.user);
+
 };
 
 // Check subscription status
@@ -277,5 +279,4 @@ exports.validateRequest = (schema) => {
     next();
   };
 };
-
 module.exports = exports;

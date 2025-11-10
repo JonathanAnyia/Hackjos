@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const { protect, checkEmailVerified, logActivity } = require('../middleware/auth');
 const {
   getProducts,
   getProduct,
@@ -15,7 +16,7 @@ const {
   exportInventory
 } = require('../controllers/inventory');
 
-const { protect, checkEmailVerified, logActivity } = require('../middleware/auth');
+
 
 // All routes require authentication
 router.use(protect);
@@ -30,7 +31,7 @@ router.get('/export', exportInventory);
 // Main CRUD routes
 router.route('/')
   .get(getProducts)
-  .post(checkEmailVerified, logActivity('product_created'), createProduct);
+  //.post(checkEmailVerified, logActivity('product_created'), createProduct);
 
 router.route('/:id')
   .get(getProduct)
@@ -40,6 +41,7 @@ router.route('/:id')
 // Stock management
 router.post('/:id/add-stock', logActivity('stock_added'), addStock);
 router.post('/:id/remove-stock', logActivity('stock_removed'), removeStock);
+router.post('/', protect, createProduct);
 
 module.exports = router;
 

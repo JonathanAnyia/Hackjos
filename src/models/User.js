@@ -22,7 +22,7 @@ const UserSchema = new Schema({
     default: 'user' 
   },
   isActive: { type: Boolean, default: true },
-  isEmailVerified: { type: Boolean, default: false },
+  isEmailVerified: { type: Boolean, default: true },
   isPhoneVerified: { type: Boolean, default: false },
   
   settings: {

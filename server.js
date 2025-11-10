@@ -17,7 +17,7 @@ const inventoryRoutes = require('./src/routes/inventory');
 const salesRoutes = require('./src/routes/sales');
 // const adminRoutes = require('./src/routes/admin');
 // const payRoutes = require('./src/routes/paystack_sim');
-
+const cookieParser = require("cookie-parser");
 
 const app = express();
 
@@ -27,7 +27,7 @@ connectDB();
 app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json({ verify: (req, res, buf) => { req.rawBody = buf; } }));
-
+app.use(cookieParser());
 
 app.use('/api/auth', authRoutes);
 app.use('/api/services', servicesRoutes);
