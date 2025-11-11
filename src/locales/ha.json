@@ -1,0 +1,11 @@
+{
+  "welcome": "Barka da dawowa!",
+  "account_created": "An ƙirƙiri asusunka cikin nasara.",
+  "login_success": "An shiga cikin nasara.",
+  "logout_success": "An fita cikin nasara.",
+  "language_updated": "An sabunta harshenka cikin nasara.",
+  "payment_success": "An kammala biyan kuɗi cikin nasara.",
+  "payment_failed": "Biyan kuɗi ya gaza. Da fatan za a sake gwadawa.",
+  "profile_updated": "An sabunta bayanan ka cikin nasara.",
+  "error_generic": "An sami kuskure. Da fatan za a sake gwadawa daga baya."
+}

@@ -1,0 +1,11 @@
+{
+  "welcome": "Welcome back!",
+  "account_created": "Your account has been successfully created.",
+  "login_success": "Login successful.",
+  "logout_success": "You have logged out successfully.",
+  "language_updated": "Your preferred language has been updated.",
+  "payment_success": "Payment completed successfully.",
+  "payment_failed": "Payment failed. Please try again.",
+  "profile_updated": "Your profile has been updated.",
+  "error_generic": "An error occurred. Please try again later."
+}

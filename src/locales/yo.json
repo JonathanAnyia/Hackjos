@@ -1,0 +1,11 @@
+{
+  "welcome": "Kaabo pada!",
+  "account_created": "A ti ṣẹda akọọlẹ rẹ ni aṣeyọri.",
+  "login_success": "O ti wọle ni aṣeyọri.",
+  "logout_success": "O ti jade ni aṣeyọri.",
+  "language_updated": "A ti ṣe imudojuiwọn ede ayanfẹ rẹ.",
+  "payment_success": "Isanwo pari ni aṣeyọri.",
+  "payment_failed": "Isanwo kuna. Jọwọ gbiyanju lẹẹkansi.",
+  "profile_updated": "A ti ṣe imudojuiwọn profaili rẹ.",
+  "error_generic": "Asise kan waye. Jọwọ gbiyanju lẹẹkansi."  
+}

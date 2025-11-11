@@ -18,6 +18,7 @@ const salesRoutes = require('./src/routes/sales');
 // const adminRoutes = require('./src/routes/admin');
 // const payRoutes = require('./src/routes/paystack_sim');
 const cookieParser = require("cookie-parser");
+const userRoutes = require('./src/routes/users');
 
 const app = express();
 
@@ -38,6 +39,7 @@ app.use('/api/inventory', inventoryRoutes);
 app.use('/api/sales', salesRoutes);
 // app.use('/api/admin', adminRoutes);
 // app.use('/api/pay', payRoutes);
+app.use('/api/users', userRoutes);
 
 
 app.get('/', (req, res) => res.json({ ok: true }));

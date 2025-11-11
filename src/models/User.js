@@ -32,7 +32,11 @@ const UserSchema = new Schema({
     },
     timezone: { type: String, default: 'Africa/Lagos (WAT)' },
     currency: { type: String, default: 'NGN (Nigerian Naira)' },
-    language: { type: String, default: 'English' },
+     language: { 
+    type: String, 
+    enum: ['English', 'Hausa', 'Igbo', 'Yoruba'], 
+    default: 'English' 
+  },
     notifications: {
       push: { type: Boolean, default: true },
       email: { type: Boolean, default: true }

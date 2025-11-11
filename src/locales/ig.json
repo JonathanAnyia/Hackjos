@@ -1,0 +1,11 @@
+{
+  "welcome": "Nnọọ azụ!",
+  "account_created": "E mepụtara akaụntụ gị nke ọma.",
+  "login_success": "Ị banyeela nke ọma.",
+  "logout_success": "Ịpụpụ gara nke ọma.",
+  "language_updated": "Asụsụ ahọpụtara gị emelitere nke ọma.",
+  "payment_success": "Emechala ịkwụ ụgwọ nke ọma.",
+  "payment_failed": "Ịkwụ ụgwọ agaghị aga. Biko nwaa ọzọ.",
+  "profile_updated": "Emechala profaịlụ gị nke ọma.",
+  "error_generic": "Enwere mperi. Biko nwaa ọzọ."  
+}
